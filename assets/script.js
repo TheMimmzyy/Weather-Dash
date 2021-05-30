@@ -90,7 +90,7 @@ $('#city-search').click(() => {
   getWeatherInformation(citySearchString);
 })
 
-//Function to allow user to search for desired city.
+//Function to allow user to initiate search for desired city.
 $('input').keypress(event => {
   if (event.which == 13) {
     event.preventDefault();
@@ -99,7 +99,7 @@ $('input').keypress(event => {
   }
 })
 
-//Function(s) to return current data on city... 1/2
+//Function to allow user to search for desired city.
 let validatedSearchString = (city => {
   let search = city.split(',');
   if (search.length > 1) {
@@ -114,13 +114,7 @@ let validatedSearchString = (city => {
   }
 })
 
-//... 2/2
-let dateString = (unixTime => {
-  return moment(unixTime).format('MM/DD/YYYY');
-})
-
-
-//Function to retrieve data from weather api using my api key.
+//Function to retrieve data from weather api using api key.
 let getWeatherInformation = (citySearchString => {
   let cityQuery = 'weather?q=' + citySearchString;
   $.ajax({
@@ -161,6 +155,11 @@ let getWeatherInformation = (citySearchString => {
     .then(response => {
       return setFiveDayData(response);
     })
+})
+
+//Function to display current date and time in designated format.
+let dateString = (unixTime => {
+  return moment(unixTime).format('MM/DD/YYYY');
 })
 
 //Function to display retrieved data on page.

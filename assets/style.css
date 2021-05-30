@@ -9,6 +9,7 @@ body {
 
 .card-body {
     background-color: rgb(74, 5, 139);
+    border-radius: 20px;
 }
 
 .col-2dot4,
