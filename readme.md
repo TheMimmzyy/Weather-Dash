@@ -9,5 +9,5 @@ With this I started by choosing the colors I'd like to use (purple as usual.) I 
 Script.js:
 With this page I began by designating variables to use for all the functions. I then decided to get the local storage functionality out of the way as it is always the most frustrating. This was a matter of setting up the functions to: allow searches, save search input, retrieve search data, save search data, and display it all in the desired place. Respectively. Within all of that was designating functions for my api calls that would retrieve all necessary weather data for relevant dates. Proofreading my syntax in the for loop I used for the five day forcast was ultimately what completed the page and got everything working, my aha moment if you will. This project was challenging though I can tell all of these concepts are becoming more familiar.
 
-
+https://themimmzyy.github.io/Weather-Dash/
 ![alt text](assets/images/WeatherdashPic.png)
