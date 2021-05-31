@@ -49,10 +49,6 @@ const addToSearchHistory = (searchString, timeStamp) => {
     return a.timeStamp - b.timeStamp;
   });
 
-  while (searchHx.length > 10) {
-    let popResult = searchHx.pop();
-  }
-
   saveToLocalStorage(searchHx);
 }
 
@@ -121,7 +117,7 @@ let getWeatherInformation = (citySearchString => {
     url: weatherInfo + cityQuery + apiKey,
     method: "GET",
     error: (err => {
-      alert("Your city was not found.")
+      err = alert("Your city was not found.")
       return;
     })
   })
@@ -182,6 +178,7 @@ let setFiveDayData = (response => {
   let dataArray = response.list;
   let size = dataArray.length;
   let dayNumber = 1;
+  //Loop to change data in each column to relevant day.
   for (let i = 0; i < size; i += 8) {
     $(`#five-day-${dayNumber}`).find('h6').text(dateString(dataArray[i].dt * 1000));
     $(`#five-day-${dayNumber}`).find('.weather-icon').attr('src', iconURL + dataArray[i].weather[0].icon + '.png');
